@@ -58,9 +58,12 @@
     <Folder Include="Properties" />
     <Folder Include="Stored procedure" />
     <Folder Include="Table" />
+    <Folder Include="Function" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Stored procedure\SP_Insert_User.sql" />
     <Build Include="Table\User.sql" />
+    <Build Include="Stored procedure\SP_Check_Password_User.sql" />
+    <Build Include="Function\SF_HashPassword.sql" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[SP_Insert_User]
-	@param1 int = 0,
-	@param2 int
+	@login VARCHAR(63),
+	@password VARCHAR(32),
+	@email VARCHAR(254)
 AS
-	SELECT @param1, @param2
-RETURN 0
+	INSERT INTO [User]([Login],[Password],[Email])
+	OUTPUT inserted.Id
+	VALUES (@login, dbo.SF_HashPassword(@password), @email);
